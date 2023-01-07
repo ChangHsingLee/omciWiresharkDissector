@@ -18,24 +18,24 @@
        3.	**data**: Actual captured frame/packet data (Hexadecimal Value)
 
      Example:<br>
-       ![Example for text format](file://picture/textFMT.png) 
+       ![Example for text format](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textFMT.png) 
    * Import text file
        1. Start Wireshark and click menu “File>Import from Hex dump…” to open dialog box<br>
-        ![hexdump dialogbox](file://picture/hexdump_dialogbox.png)
+        ![hexdump dialogbox](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/hexdump_dialogbox.png)
        2. To click “Regular Expression tab”
        3. To setup below import parameters
           * Determine which input file has to be imported, input it to text box of “file:”<br>
-            ![textbox of file](file://picture/textbox_of_file.png)
+            ![textbox of file](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textbox_of_file.png)
           *	Packet format regular expression, input below regular expression to text box.<br>
             `^(?<dir>[<>])\s(?<time>\d+:\d\d:\d\d.\d+)\s(?<data>[0-9a-fA-F]+)$`<br>
-            ![textbox of regular expression](file://picture/textbox_of_regex.png)
+            ![textbox of regular expression](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textbox_of_regex.png)
           * Data encoding and Direction indication<br>
-            ![encoding and direction](file://picture/encoding_direction.png)
+            ![encoding and direction](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/encoding_direction.png)
           * Timestamp Format (%H:%M:%S.%f)<br>
-            ![textbox of timestamp](file://picture/timestamp.png)
+            ![textbox of timestamp](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/timestamp.png)
           * Encapsulation type<br>
             Select “Ethernet” for encapsulation type and input “88b5” for Ethernet type<br>
-            ![Ethernet Encapsulation Type](file://picture/eth_encap_type.png)
+            ![Ethernet Encapsulation Type](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/eth_encap_type.png)
        4.	Press “Import” button to start analysis your captured packets
        
        Reference:<br>
