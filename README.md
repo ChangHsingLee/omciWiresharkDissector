@@ -2,7 +2,7 @@
  * Install plugin dissects packets for ONT Management and Control Interface (OMCI) protocol (ITU Rec. G984.4).
    * Download [omci.lua](https://wiki.wireshark.org/uploads/__moin_import__/attachments/Contrib/omci.lua) and [BinDecHex.lua](https://wiki.wireshark.org/uploads/__moin_import__/attachments/Contrib/BinDecHex.lua)
    * Copy `omci.lua` and `BinDecHex.lua` to Wireshark project directory. (for example: on Windows C:\Program Files\Wireshark)
-   * Add the following line at the end of this init.lua file: `dofile(DATA_DIR.."omci.lua")`
+   * Add the following line at the end of this <ins>*init.lua*</ins> file: `dofile(DATA_DIR.."omci.lua")`
    
    Reference:<br>
       https://wiki.wireshark.org/Contrib<br>
