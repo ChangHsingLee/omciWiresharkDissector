@@ -12,13 +12,21 @@
      * one packet per line and end of character ‘\n’<br>
      * Separate fields with whitespace
      * Supported fields
-       1. **dir**: the direction the packet was sent over the wire; `<` for inbound and `>` for outbound.
-       2. **time**: timestamp for the packet, format is “%H:%M:%S.%f” (Decimal Value)<br>
-                    %H: `Hour`, %M: `Minutes`, %S: `Seconds`, %f: `Nanoseconds`
-       3.	**data**: Actual captured frame/packet data (Hexadecimal Value)
-
-     Example:<br>
-       ![Example for text format](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textFMT.png) 
+        1. **dir**: the direction the packet was sent over the wire; `<` for inbound and `>` for outbound.
+        2. **time**: timestamp for the packet, format is “%H:%M:%S.%f” (Decimal Value)<br>
+           %H: `Hour`, %M: `Minutes`, %S: `Seconds`, %f: `Nanoseconds`
+        3. **data**: Actual captured frame/packet data (Hexadecimal Value)
+           * data format for Ethernet Type = `0x88b5` (Local Experimental EtherType 1)<br>
+              data[0-47]: **OMCI frame**<br>
+              Example:<br>
+              ![Example for text format](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textFMT.png)
+           * data format for Ethernet Type = `0x88b7` (OUI Extended EtherType)<br>
+              data[0-2]:  **ITU-T OUI**=0x0019A7 (ITU-T OUI Ethertype format)<br>
+              data[3-4]:  **ITU-T Subtype**=0x0002 (OMCI per G.986)<br>
+              data[5-6]:  **Packet Lenth**=0x0030 (OMCI packet length = 48 bytes)<br>
+              data[7-54]: **OMCI frame**<br>
+              Example:<br>
+              ![Example for text format 88b7](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textFMT_88b7.png)
    * Import text file
        1. Start Wireshark and click menu “File>Import from Hex dump…” to open dialog box<br>
         ![hexdump dialogbox](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/hexdump_dialogbox.png)
@@ -35,7 +43,7 @@
           * Timestamp Format (`%H:%M:%S.%f`)<br>
             ![textbox of timestamp](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/timestamp.png)
           * Encapsulation type<br>
-            Select “`Ethernet`” for encapsulation type and input “`88b5`” for Ethernet type<br>
+            Select "`Ethernet`" for encapsulation type and input "`88b5`" or "`88b7`" for Ethernet type<br>
             ![Ethernet Encapsulation Type](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/eth_encap_type.png)
        4.	Press “Import” button to start analysis your captured packets
        
