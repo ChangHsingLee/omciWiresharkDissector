@@ -27,6 +27,11 @@
               data[7-54]: **OMCI frame**<br>
               Example:<br>
               ![Example for text format 88b7](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/textFMT_88b7.png)
+	      Reference:<br>
+	      https://www.itu.int/en/ITU-T/studygroups/2017-2020/15/Documents/IEEE-assigned_OUI-23-04-2021.docx<br>
+              https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.986-201001-I!!PDF-E&type=items or<br>
+              https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.9806-202202-I!Cor1!PDF-E&type=items<br>
+              https://www.ieee802.org/1/files/public/docs2020/maint-seaman-protocol-ids-in-std-802-0520-v01.pdf<br>
    * Import text file
        1. Start Wireshark and click menu “File>Import from Hex dump…” to open dialog box<br>
         ![hexdump dialogbox](https://github.com/ChangHsingLee/omciWiresharkDissector/blob/main/picture/hexdump_dialogbox.png)
